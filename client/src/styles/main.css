@@ -2,7 +2,7 @@
  * ATHERMELEC — "Haute Tension"
  * Design: Industrial Noir × Signal Red
  * Bebas Neue (display) · Barlow Condensed (headings) · IBM Plex Sans (body) · IBM Plex Mono (mono)
- * Palette: #0C0C0F near-black · #D1001F signal red · #F5F2EE bright white
+ * Palette: #19191E charcoal · #D1001F signal red · #F5F2EE bright white
  */
 
 /* ═══════════════════════════════════════════
@@ -10,15 +10,15 @@
 ═══════════════════════════════════════════ */
 :root {
   /* Backgrounds */
-  --bg:           #0C0C0F;
-  --bg-surface:   #111116;
-  --bg-card:      #16161D;
-  --bg-elevated:  #1D1D26;
+  --bg:           #19191E;
+  --bg-surface:   #1F1F26;
+  --bg-card:      #25252D;
+  --bg-elevated:  #2E2E38;
 
   /* Borders */
-  --border:       rgba(255,255,255,0.06);
-  --border-mid:   rgba(255,255,255,0.10);
-  --border-strong:rgba(255,255,255,0.18);
+  --border:       rgba(255,255,255,0.08);
+  --border-mid:   rgba(255,255,255,0.13);
+  --border-strong:rgba(255,255,255,0.22);
 
   /* Signal Red */
   --amber:        #D1001F;
@@ -50,10 +50,10 @@
   --ease:         cubic-bezier(0.16, 1, 0.3, 1);
 
   /* Legacy aliases (admin compatibility) */
-  --color-primary:    #0C0C0F;
+  --color-primary:    #19191E;
   --color-accent:     #D1001F;
-  --color-bg:         #0C0C0F;
-  --color-bg-alt:     #111116;
+  --color-bg:         #19191E;
+  --color-bg-alt:     #1F1F26;
   --color-text:       #F5F2EE;
   --color-text-light: #A8A39C;
   --color-border:     rgba(255,255,255,0.10);
@@ -416,7 +416,7 @@ main { flex: 1; padding-top: var(--nav-h); }
 
 .btn-primary {
   background: var(--amber);
-  color: #0C0C0F;
+  color: #FFFFFF;
   border-color: var(--amber);
 }
 
@@ -566,8 +566,8 @@ select.form-input {
   position: absolute;
   left: 3px; top: 1px;
   width: 8px; height: 5px;
-  border-left: 2px solid #0C0C0F;
-  border-bottom: 2px solid #0C0C0F;
+  border-left: 2px solid #FFFFFF;
+  border-bottom: 2px solid #FFFFFF;
   transform: rotate(-45deg);
 }
 
@@ -1549,7 +1549,7 @@ select.form-input {
 .filter-tab.active {
   background: var(--amber);
   border-color: var(--amber);
-  color: #0C0C0F;
+  color: #FFFFFF;
 }
 
 .realisations-grid {
