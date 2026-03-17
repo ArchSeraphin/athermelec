@@ -25,7 +25,10 @@ export default function Navbar() {
     <nav className={`navbar${scrolled ? ' scrolled' : ''}`} aria-label="Navigation principale">
       <div className="navbar-container">
         <Link to="/" className="navbar-logo" onClick={close} aria-label="Athermelec — Accueil">
-          <img src="/img/logo/logo.avif" alt="Logo Athermelec" />
+          <svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true">
+            <polygon points="13,1 25,7 25,19 13,25 1,19 1,7" fill="none" stroke="#F0A500" strokeWidth="1.5"/>
+            <path d="M8 13 L13 7 L18 13 L13 19 Z" fill="#F0A500" opacity="0.9"/>
+          </svg>
           <span className="navbar-logo-text">Athermelec</span>
         </Link>
 
