@@ -5,14 +5,6 @@
   Require all denied
 </FilesMatch>
 
-<DirectoryMatch "node_modules">
-  Require all denied
-</DirectoryMatch>
-
-<DirectoryMatch "\.git">
-  Require all denied
-</DirectoryMatch>
-
 <FilesMatch "\.(sql|sh|md)$">
   Require all denied
 </FilesMatch>
