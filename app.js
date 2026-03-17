@@ -3,7 +3,7 @@
  * Basé sur l'architecture Express + React (Vite)
  */
 
-require('dotenv').config();
+require('dotenv').config({ path: require('path').join(__dirname, '.env') });
 const express = require('express');
 const path = require('path');
 const helmet = require('helmet');
