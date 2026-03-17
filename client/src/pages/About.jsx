@@ -14,9 +14,17 @@ export default function About() {
         canonical={`${BASE_URL}/a-propos`}
       />
 
-      <section className="page-header">
-        <h1>À propos d'Athermelec</h1>
-        <p>Depuis 1983, l'expertise électrique industrielle au service de vos projets</p>
+      <section className="page-header page-header-img">
+        <img
+          src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=1600&q=80"
+          alt="Site industriel Athermelec"
+          className="page-header-bg"
+          loading="eager"
+        />
+        <div className="page-header-content">
+          <h1>À propos d'Athermelec</h1>
+          <p>Depuis 1983, l'expertise électrique industrielle au service de vos projets</p>
+        </div>
       </section>
 
       {/* Histoire */}

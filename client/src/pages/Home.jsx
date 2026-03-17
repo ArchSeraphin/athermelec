@@ -30,7 +30,7 @@ export default function Home() {
       <section className="hero">
         <div className="hero-bg">
           <img
-            src="/img/photos/hero-industrie.jpg"
+            src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=1600&q=80"
             alt="Technicien Athermelec intervenant sur armoire électrique industrielle"
             className="hero-bg-img"
             loading="eager"
@@ -162,8 +162,8 @@ export default function Home() {
               </div>
               <div className="two-col-img">
                 <img
-                  src="/img/photos/equipe-athermelec.jpg"
-                  alt="L'équipe Athermelec"
+                  src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=900&q=80"
+                  alt="L'équipe Athermelec au travail"
                   loading="lazy"
                 />
               </div>

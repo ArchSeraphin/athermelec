@@ -5,6 +5,7 @@ import { HelmetProvider } from 'react-helmet-async';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import CookieBanner from './components/CookieBanner';
+import ScrollToTop from './components/ScrollToTop';
 
 // Pages publiques
 import Home from './pages/Home';
@@ -179,6 +180,7 @@ export default function App() {
             {JSON.stringify(localBusinessSchema)}
           </script>
 
+          <ScrollToTop />
           <Navbar />
           <main>
             <Routes>

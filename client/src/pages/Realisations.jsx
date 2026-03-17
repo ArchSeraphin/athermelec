@@ -17,12 +17,36 @@ const CATEGORIES = [
 
 // Réalisations de démonstration affichées si aucune n'est en base
 const DEMO_REALISATIONS = [
-  { id: 1, title: 'Installation cellules HT', category: 'Haute Tension', description: 'Installation de cellules haute tension sur site industriel en Isère.' },
-  { id: 2, title: 'Câblage TGBT', category: 'Basse Tension', description: 'Conception et câblage d\'un tableau général basse tension pour une usine chimique.' },
-  { id: 3, title: 'Automatisme / sonde', category: 'Automatisme', description: 'Programmation automate Schneider avec instrumentation de cuves.' },
-  { id: 4, title: 'Cheminement VDI', category: 'Réseaux VDI', description: 'Précâblage VDI complet pour bâtiment industriel tertiaire.' },
-  { id: 5, title: 'Lovage fibre optique', category: 'Fibre optique', description: 'Installation et lovage fibre optique monomode sur site pharmaceutique.' },
-  { id: 6, title: 'Relamping parking', category: 'Éclairage', description: 'Remplacement complet de l\'éclairage parking par technologie LED.' },
+  {
+    id: 1, title: 'Installation cellules HT', category: 'Haute Tension',
+    description: 'Installation de cellules haute tension sur site industriel en Isère — poste de transformation complet 20kV/400V.',
+    cover_image: 'https://images.unsplash.com/photo-1548690312-e3b507d8c110?w=700&q=80'
+  },
+  {
+    id: 2, title: 'Câblage TGBT usine chimique', category: 'Basse Tension',
+    description: 'Conception et câblage d\'un tableau général basse tension pour une usine de traitement chimique en Isère.',
+    cover_image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=700&q=80'
+  },
+  {
+    id: 3, title: 'Automatisme instrumentation', category: 'Automatisme',
+    description: 'Programmation automate Schneider M340 avec supervision SCADA, instrumentation de cuves et variation de vitesse.',
+    cover_image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=700&q=80'
+  },
+  {
+    id: 4, title: 'Précâblage VDI industriel', category: 'Réseaux VDI',
+    description: 'Précâblage VDI Cat.6A complet pour bâtiment industriel 2 000 m², intégrant 120 prises RJ45 et 4 baies serveurs.',
+    cover_image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=700&q=80'
+  },
+  {
+    id: 5, title: 'Fibre optique pharmaceutique', category: 'Fibre optique',
+    description: 'Installation et lovage fibre optique monomode OS2 sur site pharmaceutique classé ISO — 2 km de câble posé.',
+    cover_image: 'https://images.unsplash.com/photo-1562408590-e32931084e23?w=700&q=80'
+  },
+  {
+    id: 6, title: 'Relamping LED parking', category: 'Éclairage',
+    description: 'Remplacement complet de l\'éclairage parking industriel par technologie LED — économie de 65% sur la consommation.',
+    cover_image: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=700&q=80'
+  },
 ];
 
 export default function Realisations() {
