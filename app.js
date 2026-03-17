@@ -37,7 +37,19 @@ if (process.env.JWT_SECRET.length < 32 || process.env.JWT_REFRESH_SECRET.length 
 const isProduction = process.env.NODE_ENV === 'production';
 
 app.use(helmet({
-  contentSecurityPolicy: isProduction ? undefined : false,
+  contentSecurityPolicy: isProduction ? {
+    directives: {
+      defaultSrc:  ["'self'"],
+      scriptSrc:   ["'self'", "'unsafe-inline'", "https://www.googletagmanager.com", "https://www.google-analytics.com"],
+      styleSrc:    ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
+      fontSrc:     ["'self'", "https://fonts.gstatic.com"],
+      imgSrc:      ["'self'", "data:", "https://images.unsplash.com", "https://www.google-analytics.com"],
+      connectSrc:  ["'self'", "https://www.google-analytics.com", "https://analytics.google.com"],
+      frameSrc:    ["'self'", "https://www.google.com"],
+      objectSrc:   ["'none'"],
+      upgradeInsecureRequests: []
+    }
+  } : false,
   hsts: isProduction ? { maxAge: 31536000, includeSubDomains: true } : false,
   frameguard: { action: 'deny' }
 }));
