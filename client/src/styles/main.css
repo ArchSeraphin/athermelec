@@ -172,6 +172,12 @@ main { flex: 1; padding-top: var(--nav-h); }
   width: auto;
 }
 
+.navbar-logo-img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
 .navbar-logo-text {
   font-family: var(--font-head);
   font-weight: 800;
@@ -898,8 +904,14 @@ select.form-input {
 .service-card:hover::after { transform: scaleX(1); }
 
 .service-icon {
-  font-size: 1.75rem;
+  font-size: 2rem;
   margin-bottom: 1.25rem;
+  display: block;
+  color: var(--amber);
+  line-height: 1;
+}
+
+.service-icon svg {
   display: block;
 }
 
@@ -1188,8 +1200,15 @@ select.form-input {
 
 .feature-item .feature-icon,
 .value-item .value-icon {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.75rem;
+  margin-bottom: 0.75rem;
+  color: var(--amber);
+  line-height: 1;
+}
+
+.feature-item .feature-icon svg,
+.value-item .value-icon svg {
+  display: block;
 }
 
 .feature-item h4,
@@ -1574,8 +1593,8 @@ select.form-input {
   align-items: center;
   justify-content: center;
   background: var(--bg-elevated);
-  font-size: 2.5rem;
-  color: var(--text-3);
+  font-size: 3rem;
+  color: var(--amber);
   border-bottom: 1px solid var(--border);
 }
 

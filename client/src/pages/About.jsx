@@ -2,6 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import ScrollReveal from '../components/ScrollReveal';
+import {
+  IconFactory, IconGlobe,
+  IconFlask, IconFlame, IconCross, IconDiamond, IconWind, IconBuilding,
+} from '../components/Icons';
 
 const BASE_URL = 'https://www.atherm-elec.com';
 
@@ -81,7 +85,7 @@ export default function About() {
             </div>
             <div className="services-grid">
               <div className="service-card">
-                <div className="service-icon">🏭</div>
+                <div className="service-icon"><IconFactory /></div>
                 <h3>Frontonas (38) — Siège social</h3>
                 <p>328 route de la Verpillière, 38290 FRONTONAS</p>
                 <ul>
@@ -96,7 +100,7 @@ export default function About() {
                 </p>
               </div>
               <div className="service-card">
-                <div className="service-icon">🌐</div>
+                <div className="service-icon"><IconGlobe /></div>
                 <h3>Pechbonnieu (31) — ACTIF RÉSEAU</h3>
                 <p>ZA le Grands – 17 rue des artisans, 31140 PECHBONNIEU</p>
                 <ul>
@@ -129,32 +133,32 @@ export default function About() {
             </div>
             <div className="features-grid">
               <div className="feature-item">
-                <div className="feature-icon">🧪</div>
+                <div className="feature-icon"><IconFlask /></div>
                 <h3>Industrie chimique</h3>
                 <p>Installations certifiées ATEX pour les environnements à risque explosif.</p>
               </div>
               <div className="feature-item">
-                <div className="feature-icon">⚗️</div>
+                <div className="feature-icon"><IconFlame /></div>
                 <h3>Pétrochimie</h3>
                 <p>Câblage et automatisme pour les sites pétrochimiques et raffineries.</p>
               </div>
               <div className="feature-item">
-                <div className="feature-icon">💊</div>
+                <div className="feature-icon"><IconCross /></div>
                 <h3>Pharmaceutique</h3>
                 <p>Précision et traçabilité pour les installations en milieu pharmaceutique.</p>
               </div>
               <div className="feature-item">
-                <div className="feature-icon">🌸</div>
+                <div className="feature-icon"><IconDiamond /></div>
                 <h3>Cosmétique</h3>
                 <p>Électricité et automatisme pour les sites de production cosmétique.</p>
               </div>
               <div className="feature-item">
-                <div className="feature-icon">💨</div>
+                <div className="feature-icon"><IconWind /></div>
                 <h3>Traitement de l'air</h3>
                 <p>Instrumentation et régulation pour les systèmes de traitement d'air.</p>
               </div>
               <div className="feature-item">
-                <div className="feature-icon">🏢</div>
+                <div className="feature-icon"><IconBuilding /></div>
                 <h3>Tertiaire & public</h3>
                 <p>Réseaux VDI et câblage pour les bâtiments tertiaires et publics.</p>
               </div>

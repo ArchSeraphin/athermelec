@@ -10,10 +10,7 @@ export default function Footer() {
         {/* Colonne marque */}
         <div className="footer-brand">
           <Link to="/" className="footer-logo" aria-label="Athermelec">
-            <svg width="24" height="24" viewBox="0 0 26 26" fill="none" aria-hidden="true">
-              <polygon points="13,1 25,7 25,19 13,25 1,19 1,7" fill="none" stroke="#F0A500" strokeWidth="1.5"/>
-              <path d="M8 13 L13 7 L18 13 L13 19 Z" fill="#F0A500" opacity="0.9"/>
-            </svg>
+            <img src="/assets/logo/LOGO%20ATHERM%20ELEC%202019.avif" alt="Logo Athermelec" className="navbar-logo-img" />
             <span className="footer-logo-text">Athermelec</span>
           </Link>
           <p>

@@ -2,12 +2,18 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import ScrollReveal from '../components/ScrollReveal';
+import {
+  IconBolt, IconPower, IconCpu, IconNetwork, IconCompass,
+  IconBatteryCharging, IconSnowflake, IconLock,
+  IconClipboard, IconMonitor, IconWrench, IconCheckCircle,
+  IconCalendar, IconMapPin,
+} from '../components/Icons';
 
 const BASE_URL = 'https://www.atherm-elec.com';
 
 const services = [
   {
-    icon: '⚡',
+    icon: <IconBolt />,
     title: 'Haute Tension (HT)',
     description: 'Installation et maintenance des équipements haute tension pour vos sites industriels.',
     items: [
@@ -18,7 +24,7 @@ const services = [
     ]
   },
   {
-    icon: '🔌',
+    icon: <IconPower />,
     title: 'Basse Tension (BT)',
     description: 'Câblage, conception et modernisation de vos installations basse tension.',
     items: [
@@ -29,7 +35,7 @@ const services = [
     ]
   },
   {
-    icon: '🤖',
+    icon: <IconCpu />,
     title: 'Automatisme & Instrumentation',
     description: 'Programmation d\'automates et instrumentation pour vos lignes de production.',
     items: [
@@ -42,7 +48,7 @@ const services = [
     ]
   },
   {
-    icon: '🌐',
+    icon: <IconNetwork />,
     title: 'Réseaux informatiques & VDI',
     description: 'Architecture et câblage de vos réseaux informatiques industriels.',
     items: [
@@ -55,7 +61,7 @@ const services = [
     ]
   },
   {
-    icon: '📐',
+    icon: <IconCompass />,
     title: 'Bureau d\'études',
     description: 'Gestion complète de vos projets clé en main, de l\'étude à la mise en service.',
     items: [
@@ -68,7 +74,7 @@ const services = [
     ]
   },
   {
-    icon: '🚗',
+    icon: <IconBatteryCharging />,
     title: 'IRVE — Recharge Véhicules Électriques',
     description: 'Installation certifiée d\'infrastructures de recharge pour vos flottes d\'entreprise.',
     items: [
@@ -79,7 +85,7 @@ const services = [
     ]
   },
   {
-    icon: '❄️',
+    icon: <IconSnowflake />,
     title: 'Climatisation industrielle',
     description: 'Étude et installation de systèmes climatiques pour vos locaux industriels.',
     items: [
@@ -89,7 +95,7 @@ const services = [
     ]
   },
   {
-    icon: '🔐',
+    icon: <IconLock />,
     title: 'Sécurité & Contrôle d\'accès',
     description: 'Sécurisation de vos sites industriels et gestion des accès.',
     items: [
@@ -203,32 +209,32 @@ export default function Services() {
             </div>
             <div className="features-grid">
               <div className="feature-item">
-                <div className="feature-icon">📋</div>
+                <div className="feature-icon"><IconClipboard /></div>
                 <h3>1. Étude & conception</h3>
                 <p>Élaboration du cahier des charges, analyses fonctionnelles et conception avec AutoCAD et SEE Electrical.</p>
               </div>
               <div className="feature-item">
-                <div className="feature-icon">💻</div>
+                <div className="feature-icon"><IconMonitor /></div>
                 <h3>2. Programmation</h3>
                 <p>Développement et tests des programmes automates et systèmes de supervision en atelier.</p>
               </div>
               <div className="feature-item">
-                <div className="feature-icon">🔧</div>
+                <div className="feature-icon"><IconWrench /></div>
                 <h3>3. Installation</h3>
                 <p>Câblage et installation sur site par des techniciens habilités, dans le respect des normes.</p>
               </div>
               <div className="feature-item">
-                <div className="feature-icon">✅</div>
+                <div className="feature-icon"><IconCheckCircle /></div>
                 <h3>4. Mise en service</h3>
                 <p>Tests, réglages et validation de l'ensemble de l'installation avec formation des équipes.</p>
               </div>
               <div className="feature-item">
-                <div className="feature-icon">📅</div>
+                <div className="feature-icon"><IconCalendar /></div>
                 <h3>Conditions commerciales</h3>
                 <p>Acompte de 30% à la signature — facturation mensuelle sur avancement — paiement 30 jours.</p>
               </div>
               <div className="feature-item">
-                <div className="feature-icon">🌍</div>
+                <div className="feature-icon"><IconMapPin /></div>
                 <h3>Zone d'intervention</h3>
                 <p>Interventions en France et à l'international, depuis nos deux sites de Frontonas (38) et Pechbonnieu (31).</p>
               </div>

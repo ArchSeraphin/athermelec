@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import ScrollReveal from '../components/ScrollReveal';
+import { IconBolt, IconCpu, IconNetwork, IconCompass } from '../components/Icons';
 
 const BASE_URL = 'https://www.atherm-elec.com';
 
@@ -90,7 +91,7 @@ export default function Home() {
             </div>
             <div className="services-grid">
               <div className="service-card">
-                <div className="service-icon">⚡</div>
+                <div className="service-icon"><IconBolt /></div>
                 <h3>Courant fort HT / BT</h3>
                 <p>Installation de cellules haute tension, câblage TGBT, conception et retrofitting d'armoires, têtes de câbles HT.</p>
                 <ul>
@@ -100,7 +101,7 @@ export default function Home() {
                 </ul>
               </div>
               <div className="service-card">
-                <div className="service-icon">🔧</div>
+                <div className="service-icon"><IconCpu /></div>
                 <h3>Automatisme & Instrumentation</h3>
                 <p>Programmation d'automates Schneider, Siemens et Rockwell, variation de vitesse, régulation et supervision SCADA.</p>
                 <ul>
@@ -110,7 +111,7 @@ export default function Home() {
                 </ul>
               </div>
               <div className="service-card">
-                <div className="service-icon">🌐</div>
+                <div className="service-icon"><IconNetwork /></div>
                 <h3>Réseaux informatiques & VDI</h3>
                 <p>Précâblage VDI, fibre optique, baies informatiques et paramétrage de switches pour vos environnements industriels.</p>
                 <ul>
@@ -120,7 +121,7 @@ export default function Home() {
                 </ul>
               </div>
               <div className="service-card">
-                <div className="service-icon">📐</div>
+                <div className="service-icon"><IconCompass /></div>
                 <h3>Bureau d'études</h3>
                 <p>Gestion de projets clé en main : cahier des charges, analyses fonctionnelles, programmation, installation et mise en service.</p>
                 <ul>

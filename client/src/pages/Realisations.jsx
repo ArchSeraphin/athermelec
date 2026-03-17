@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import SEO from '../components/SEO';
 import ScrollReveal from '../components/ScrollReveal';
+import { IconBolt } from '../components/Icons';
 
 const BASE_URL = 'https://www.atherm-elec.com';
 
@@ -140,7 +141,7 @@ export default function Realisations() {
                       loading="lazy"
                     />
                   ) : (
-                    <div className="realisation-card-img-placeholder">⚡</div>
+                    <div className="realisation-card-img-placeholder"><IconBolt /></div>
                   )}
                   <div className="realisation-card-body">
                     {r.category && (

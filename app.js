@@ -65,6 +65,7 @@ app.use(cookieParser());
 
 // ─── Fichiers statiques ───
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+app.use('/assets', express.static(path.join(__dirname, 'assets')));
 app.use('/img', express.static(path.join(__dirname, 'img')));
 
 // ─── Routes API ───
