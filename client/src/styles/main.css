@@ -142,10 +142,10 @@ main { flex: 1; padding-top: var(--nav-h); }
 }
 
 .navbar.scrolled {
-  background: rgba(12,12,15,0.96);
+  background: rgba(25,25,30,0.94);
   border-bottom-color: var(--border-mid);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 }
 
 .navbar-container {
@@ -647,8 +647,8 @@ select.form-input {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(105deg, rgba(12,12,15,0.92) 45%, rgba(12,12,15,0.6) 100%),
-    linear-gradient(180deg, rgba(12,12,15,0.3) 0%, rgba(12,12,15,0.85) 100%);
+    linear-gradient(105deg, rgba(25,25,30,0.72) 30%, rgba(25,25,30,0.35) 100%),
+    linear-gradient(180deg, rgba(25,25,30,0.15) 0%, rgba(25,25,30,0.70) 100%);
   z-index: 1;
 }
 
@@ -2129,11 +2129,20 @@ select.form-input {
 @media (max-width: 768px) {
   .navbar-toggle { display: flex; }
 
+  /* Supprimer backdrop-filter sur mobile : il crée un stacking context
+     qui empêche le menu enfant position:fixed de se positionner
+     par rapport au viewport quand l'utilisateur a scrollé */
+  .navbar.scrolled {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: rgba(25,25,30,0.98);
+  }
+
   .navbar-menu {
     position: fixed;
     top: var(--nav-h);
     left: 0; right: 0; bottom: 0;
-    background: rgba(12,12,15,0.98);
+    background: rgba(25,25,30,0.98);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     flex-direction: column;
