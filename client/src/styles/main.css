@@ -2279,27 +2279,44 @@ html {
 }
 
 /* ── Navbar light ───────────────────────────────────────────────── */
-/* Sur fond transparent (dessus du hero sombre) : garder les liens clairs */
-[data-theme="light"] .navbar-links a            { color: rgba(245,242,238,0.75); }
+/* Par défaut : fond frosted-glass léger dès le départ
+   → lisible sur fond beige (pages intérieures) ET sur hero sombre */
+[data-theme="light"] .navbar {
+  background: rgba(240,237,232,0.72);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom-color: rgba(0,0,0,0.06);
+}
+[data-theme="light"] .navbar-links a         { color: var(--text-2); }
 [data-theme="light"] .navbar-links a:hover,
-[data-theme="light"] .navbar-links a.active     { color: #F5F2EE; }
-[data-theme="light"] .navbar-logo-text          { color: #F5F2EE; }
+[data-theme="light"] .navbar-links a.active  { color: var(--text); }
+[data-theme="light"] .navbar-logo-text       { color: var(--text); }
 
-/* Navbar scrollée : fond clair, liens sombres */
+/* Navbar scrollée : fond plus opaque */
 [data-theme="light"] .navbar.scrolled {
-  background: rgba(250,250,248,0.95);
+  background: rgba(250,250,248,0.96);
   border-bottom-color: rgba(0,0,0,0.10);
 }
-[data-theme="light"] .navbar.scrolled .navbar-links a       { color: var(--text-2); }
+[data-theme="light"] .navbar.scrolled .navbar-links a        { color: var(--text-2); }
 [data-theme="light"] .navbar.scrolled .navbar-links a:hover,
 [data-theme="light"] .navbar.scrolled .navbar-links a.active { color: var(--text); }
 [data-theme="light"] .navbar.scrolled .navbar-logo-text      { color: var(--text); }
 [data-theme="light"] .navbar.scrolled .navbar-toggle         { color: var(--text); }
 
-/* ── Hero : texte toujours clair (overlay sombre sur la photo) ── */
+/* ── Hero : texte et boutons toujours clairs (overlay sombre sur la photo) ── */
 [data-theme="light"] .hero-title    { color: #F5F2EE; }
 [data-theme="light"] .hero-subtitle { color: rgba(245,242,238,0.72); }
 [data-theme="light"] .hero-scroll   { color: rgba(245,242,238,0.40); }
+
+/* Boutons ghost/outline dans le hero : rester blancs quelle que soit le thème */
+[data-theme="light"] .hero .btn-ghost {
+  color: #F5F2EE;
+  border-color: rgba(245,242,238,0.38);
+}
+[data-theme="light"] .hero .btn-ghost:hover {
+  color: var(--amber);
+  border-color: var(--amber);
+}
 
 /* ── Footer : toujours sombre (contraste fort) ──────────────────── */
 [data-theme="light"] .footer {
@@ -2336,8 +2353,8 @@ html {
 [data-theme="light"] .btn-outline   { border-color: rgba(0,0,0,0.18); color: var(--text-2); }
 [data-theme="light"] .btn-outline:hover { border-color: var(--amber); color: var(--amber); }
 
-/* ── Hamburger (mobile) : icône sombre quand scrollé en light mode ─ */
-[data-theme="light"] .hamburger span { background: #F5F2EE; }
+/* ── Hamburger (mobile) : toujours sombre en light mode ─ */
+[data-theme="light"] .hamburger span              { background: var(--text); }
 [data-theme="light"] .navbar.scrolled .hamburger span { background: var(--text); }
 
 /* ── Menu mobile : fond clair en mode clair ─────────────────────── */
