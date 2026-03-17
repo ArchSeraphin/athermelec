@@ -1,8 +1,8 @@
 /*
  * ATHERMELEC — "Haute Tension"
- * Design: Industrial Noir × Amber Electric
+ * Design: Industrial Noir × Signal Red
  * Bebas Neue (display) · Barlow Condensed (headings) · IBM Plex Sans (body) · IBM Plex Mono (mono)
- * Palette: #0C0C0F near-black · #F0A500 amber · #EDE8DF warm white
+ * Palette: #0C0C0F near-black · #D1001F signal red · #F5F2EE bright white
  */
 
 /* ═══════════════════════════════════════════
@@ -20,17 +20,17 @@
   --border-mid:   rgba(255,255,255,0.10);
   --border-strong:rgba(255,255,255,0.18);
 
-  /* Amber Electric */
-  --amber:        #F0A500;
-  --amber-bright: #FFB800;
-  --amber-dim:    rgba(240,165,0,0.55);
-  --amber-glow:   rgba(240,165,0,0.09);
-  --amber-line:   rgba(240,165,0,0.28);
+  /* Signal Red */
+  --amber:        #D1001F;
+  --amber-bright: #E5002C;
+  --amber-dim:    rgba(209,0,31,0.55);
+  --amber-glow:   rgba(209,0,31,0.09);
+  --amber-line:   rgba(209,0,31,0.28);
 
   /* Text */
-  --text:         #EDE8DF;
-  --text-2:       #A8A39C;
-  --text-3:       #6A6660;
+  --text:         #F5F2EE;
+  --text-2:       #B0AAA3;
+  --text-3:       #706A64;
 
   /* Semantic */
   --success:      #22C55E;
@@ -51,10 +51,10 @@
 
   /* Legacy aliases (admin compatibility) */
   --color-primary:    #0C0C0F;
-  --color-accent:     #F0A500;
+  --color-accent:     #D1001F;
   --color-bg:         #0C0C0F;
   --color-bg-alt:     #111116;
-  --color-text:       #EDE8DF;
+  --color-text:       #F5F2EE;
   --color-text-light: #A8A39C;
   --color-border:     rgba(255,255,255,0.10);
   --color-success:    #22C55E;
@@ -423,7 +423,7 @@ main { flex: 1; padding-top: var(--nav-h); }
 .btn-primary:hover {
   background: var(--amber-bright);
   border-color: var(--amber-bright);
-  box-shadow: 0 8px 30px rgba(240,165,0,0.35);
+  box-shadow: 0 8px 30px rgba(209,0,31,0.40);
 }
 
 .btn-ghost {
@@ -657,7 +657,7 @@ select.form-input {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(circle, rgba(240,165,0,0.18) 1px, transparent 1px);
+  background-image: radial-gradient(circle, rgba(209,0,31,0.15) 1px, transparent 1px);
   background-size: 32px 32px;
   z-index: 2;
   opacity: 0.4;
@@ -1247,7 +1247,7 @@ select.form-input {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(circle, rgba(240,165,0,0.12) 1px, transparent 1px);
+  background-image: radial-gradient(circle, rgba(209,0,31,0.10) 1px, transparent 1px);
   background-size: 40px 40px;
   mask-image: radial-gradient(ellipse 60% 80% at 50% 50%, black 0%, transparent 100%);
 }
