@@ -2336,9 +2336,16 @@ html {
   border-color: rgba(255,255,255,0.10);
 }
 
-/* ── Page header (pages intérieures) : fond sombre conservé ─────── */
+/* ── Page header (pages intérieures) : fond elevé, texte sombre naturel ── */
 [data-theme="light"] .page-header:not(.page-header-img) {
-  background: #25252D;
+  background: var(--bg-elevated);
+}
+
+/* Page header avec image de fond (About) : texte toujours blanc
+   car l'image est assombrie (filter: brightness(0.35)) */
+[data-theme="light"] .page-header-content h1,
+[data-theme="light"] .page-header-content p {
+  color: #F5F2EE;
 }
 
 /* ── Bouton ghost / outline : lisible sur fond clair ────────────── */
