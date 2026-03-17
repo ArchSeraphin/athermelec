@@ -22,15 +22,39 @@ const IconMoon = () => (
   </svg>
 );
 
-export default function ThemeToggle() {
-  const [theme, setTheme] = useState(() =>
-    (typeof window !== 'undefined' && localStorage.getItem('theme')) || 'dark'
-  );
+/** Résout le thème initial :
+ *  1. Préférence manuelle enregistrée (localStorage) → priorité absolue
+ *  2. Sinon → préférence système (prefers-color-scheme)
+ *  3. Fallback → dark
+ */
+function resolveInitialTheme() {
+  if (typeof window === 'undefined') return 'dark';
+  const stored = localStorage.getItem('theme');
+  if (stored === 'light' || stored === 'dark') return stored;
+  return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+}
 
+export default function ThemeToggle() {
+  const [theme, setTheme] = useState(resolveInitialTheme);
+
+  // Applique le thème sur <html> et persiste la préférence manuelle
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('theme', theme);
   }, [theme]);
+
+  // Suit les changements de préférence OS en temps réel,
+  // mais seulement si l'utilisateur n'a pas de préférence manuelle
+  useEffect(() => {
+    const mq = window.matchMedia('(prefers-color-scheme: light)');
+    const handler = (e) => {
+      if (!localStorage.getItem('theme')) {
+        setTheme(e.matches ? 'light' : 'dark');
+      }
+    };
+    mq.addEventListener('change', handler);
+    return () => mq.removeEventListener('change', handler);
+  }, []);
 
   const toggle = () => setTheme(t => t === 'dark' ? 'light' : 'dark');
 
