@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import ThemeToggle from './ThemeToggle';
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -51,6 +52,7 @@ export default function Navbar() {
             <li><NavLink to="/contact" onClick={close}>Contact</NavLink></li>
           </ul>
           <div className="navbar-cta">
+            <ThemeToggle />
             <Link to="/contact" className="btn btn-primary" onClick={close}>
               Demander un devis
             </Link>

@@ -231,6 +231,11 @@ main { flex: 1; padding-top: var(--nav-h); }
   transform: scaleX(1);
 }
 
+.navbar-cta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
 .navbar-cta .btn { font-size: 0.8rem; }
 
 .navbar-toggle {
@@ -2203,4 +2208,143 @@ select.form-input {
   .admin-sections-grid { grid-template-columns: 1fr; }
   .settings-grid { grid-template-columns: 1fr; }
   .filter-tabs { justify-content: flex-start; }
+}
+
+/* ═══════════════════════════════════════════
+   THEME TOGGLE BUTTON
+═══════════════════════════════════════════ */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--border-strong);
+  background: transparent;
+  color: var(--text-2);
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+  flex-shrink: 0;
+}
+
+.theme-toggle:hover {
+  border-color: var(--amber);
+  color: var(--amber);
+  background: var(--amber-glow);
+}
+
+/* ═══════════════════════════════════════════
+   LIGHT MODE — [data-theme="light"]
+   Palette : warm paper · signal red · near-black
+═══════════════════════════════════════════ */
+
+/* Transition douce entre les deux thèmes */
+html {
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+[data-theme="light"] {
+  /* Backgrounds — papier industriel chaud */
+  --bg:           #F0EDE8;
+  --bg-surface:   #FAFAF8;
+  --bg-card:      #FFFFFF;
+  --bg-elevated:  #E8E3DC;
+
+  /* Borders */
+  --border:        rgba(0,0,0,0.07);
+  --border-mid:    rgba(0,0,0,0.12);
+  --border-strong: rgba(0,0,0,0.20);
+
+  /* Signal Red — inchangé */
+  --amber:        #D1001F;
+  --amber-bright: #E5002C;
+  --amber-dim:    rgba(209,0,31,0.50);
+  --amber-glow:   rgba(209,0,31,0.07);
+  --amber-line:   rgba(209,0,31,0.22);
+
+  /* Text */
+  --text:   #1A1A1F;
+  --text-2: #524E4A;
+  --text-3: #908B86;
+
+  /* Legacy aliases */
+  --color-primary:    #F0EDE8;
+  --color-bg:         #F0EDE8;
+  --color-bg-alt:     #FAFAF8;
+  --color-text:       #1A1A1F;
+  --color-text-light: #524E4A;
+  --color-border:     rgba(0,0,0,0.12);
+}
+
+/* ── Navbar light ───────────────────────────────────────────────── */
+/* Sur fond transparent (dessus du hero sombre) : garder les liens clairs */
+[data-theme="light"] .navbar-links a            { color: rgba(245,242,238,0.75); }
+[data-theme="light"] .navbar-links a:hover,
+[data-theme="light"] .navbar-links a.active     { color: #F5F2EE; }
+[data-theme="light"] .navbar-logo-text          { color: #F5F2EE; }
+
+/* Navbar scrollée : fond clair, liens sombres */
+[data-theme="light"] .navbar.scrolled {
+  background: rgba(250,250,248,0.95);
+  border-bottom-color: rgba(0,0,0,0.10);
+}
+[data-theme="light"] .navbar.scrolled .navbar-links a       { color: var(--text-2); }
+[data-theme="light"] .navbar.scrolled .navbar-links a:hover,
+[data-theme="light"] .navbar.scrolled .navbar-links a.active { color: var(--text); }
+[data-theme="light"] .navbar.scrolled .navbar-logo-text      { color: var(--text); }
+[data-theme="light"] .navbar.scrolled .navbar-toggle         { color: var(--text); }
+
+/* ── Hero : texte toujours clair (overlay sombre sur la photo) ── */
+[data-theme="light"] .hero-title    { color: #F5F2EE; }
+[data-theme="light"] .hero-subtitle { color: rgba(245,242,238,0.72); }
+[data-theme="light"] .hero-scroll   { color: rgba(245,242,238,0.40); }
+
+/* ── Footer : toujours sombre (contraste fort) ──────────────────── */
+[data-theme="light"] .footer {
+  background: #16161C;
+}
+[data-theme="light"] .footer-logo-text,
+[data-theme="light"] .footer-brand > p,
+[data-theme="light"] .footer-col h4,
+[data-theme="light"] .footer-address,
+[data-theme="light"] .footer-address a,
+[data-theme="light"] .footer-copy,
+[data-theme="light"] .footer-bottom-links a {
+  color: rgba(245,242,238,0.75);
+}
+[data-theme="light"] .footer-copy,
+[data-theme="light"] .footer-bottom {
+  border-color: rgba(255,255,255,0.10);
+}
+
+/* ── Page header (pages intérieures) : fond sombre conservé ─────── */
+[data-theme="light"] .page-header:not(.page-header-img) {
+  background: #25252D;
+}
+
+/* ── Bouton ghost / outline : lisible sur fond clair ────────────── */
+[data-theme="light"] .btn-ghost {
+  border-color: rgba(0,0,0,0.25);
+  color: var(--text);
+}
+[data-theme="light"] .btn-ghost:hover {
+  border-color: var(--amber);
+  color: var(--amber);
+}
+[data-theme="light"] .btn-outline   { border-color: rgba(0,0,0,0.18); color: var(--text-2); }
+[data-theme="light"] .btn-outline:hover { border-color: var(--amber); color: var(--amber); }
+
+/* ── Hamburger (mobile) : icône sombre quand scrollé en light mode ─ */
+[data-theme="light"] .hamburger span { background: #F5F2EE; }
+[data-theme="light"] .navbar.scrolled .hamburger span { background: var(--text); }
+
+/* ── Menu mobile : fond clair en mode clair ─────────────────────── */
+@media (max-width: 768px) {
+  [data-theme="light"] .navbar-menu {
+    background: rgba(250,250,248,0.98);
+  }
+  [data-theme="light"] .navbar-menu .navbar-links a { color: var(--text-2); }
+  [data-theme="light"] .navbar-menu .navbar-links a:hover { color: var(--amber); }
 }
