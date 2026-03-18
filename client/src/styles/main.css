@@ -1414,6 +1414,22 @@ select.form-input {
   padding-top: 1rem;
 }
 
+.card-read-more {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--amber);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-top: 0.75rem;
+  transition: color 0.2s, letter-spacing 0.2s;
+}
+
+.card:hover .card-read-more {
+  letter-spacing: 0.14em;
+}
+
 /* ═══════════════════════════════════════════
    21. PAGE HEADER
 ═══════════════════════════════════════════ */

@@ -82,38 +82,40 @@ export default function NewsDetail() {
         </script>
       </Helmet>
 
-      <article className="article-detail">
-        <nav className="breadcrumb" aria-label="Fil d'Ariane">
+      <div className="article-hero">
+        <nav className="article-breadcrumb" aria-label="Fil d'Ariane">
           <Link to="/">Accueil</Link>
-          <span className="breadcrumb-sep">/</span>
+          <span> / </span>
           <Link to="/actualites">Actualités</Link>
-          <span className="breadcrumb-sep">/</span>
+          <span> / </span>
           <span>{article.title}</span>
         </nav>
+        <div className="article-header">
+          <h1>{article.title}</h1>
+          {article.published_at && (
+            <time className="article-meta">
+              {new Date(article.published_at).toLocaleDateString('fr-FR', {
+                day: 'numeric', month: 'long', year: 'numeric'
+              })}
+            </time>
+          )}
+        </div>
+      </div>
 
-        {article.cover_image && (
-          <img src={article.cover_image} alt={article.title} className="article-cover" loading="eager" />
-        )}
+      {article.cover_image && (
+        <div className="article-cover">
+          <img src={article.cover_image} alt={article.title} loading="eager" />
+        </div>
+      )}
 
-        <h1 style={{ fontFamily: 'var(--font-display)', color: 'var(--color-navy)', fontSize: 'clamp(1.5rem, 3.5vw, 2.5rem)', marginBottom: '1rem' }}>
-          {article.title}
-        </h1>
+      <div
+        className="article-content"
+        dangerouslySetInnerHTML={{ __html: article.content }}
+      />
 
-        {article.published_at && (
-          <time className="article-date">
-            {new Date(article.published_at).toLocaleDateString('fr-FR', {
-              day: 'numeric', month: 'long', year: 'numeric'
-            })}
-          </time>
-        )}
-
-        <div
-          className="article-content"
-          dangerouslySetInnerHTML={{ __html: article.content }}
-        />
-
-        <Link to="/actualites" className="btn btn-outline mt-6">← Retour aux actualités</Link>
-      </article>
+      <div className="article-footer">
+        <Link to="/actualites" className="btn btn-outline">← Retour aux actualités</Link>
+      </div>
     </>
   );
 }

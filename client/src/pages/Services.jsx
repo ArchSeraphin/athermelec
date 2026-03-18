@@ -127,9 +127,17 @@ export default function Services() {
         canonical={`${BASE_URL}/services`}
       />
 
-      <section className="page-header">
-        <h1>Nos services</h1>
-        <p>De la haute tension à l'automatisme, en passant par les réseaux — toute l'électricité industrielle</p>
+      <section className="page-header page-header-img">
+        <img
+          src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1600&q=80"
+          alt="Baie de serveurs et infrastructure réseau industrielle"
+          className="page-header-bg"
+          loading="eager"
+        />
+        <div className="page-header-content">
+          <h1>Nos services</h1>
+          <p>De la haute tension à l'automatisme, en passant par les réseaux — toute l'électricité industrielle</p>
+        </div>
       </section>
 
       {/* Grille des services */}

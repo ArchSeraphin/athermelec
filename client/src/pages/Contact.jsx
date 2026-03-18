@@ -47,9 +47,17 @@ export default function Contact() {
         canonical={`${BASE_URL}/contact`}
       />
 
-      <section className="page-header">
-        <h1>Contactez-nous</h1>
-        <p>Deux sites à votre service — Frontonas (38) et Pechbonnieu (31)</p>
+      <section className="page-header page-header-img">
+        <img
+          src="https://images.unsplash.com/photo-1548690312-e3b507d8c110?w=1600&q=80"
+          alt="Armoire électrique industrielle et câblage"
+          className="page-header-bg"
+          loading="eager"
+        />
+        <div className="page-header-content">
+          <h1>Contactez-nous</h1>
+          <p>Deux sites à votre service — Frontonas (38) et Pechbonnieu (31)</p>
+        </div>
       </section>
 
       <ScrollReveal>

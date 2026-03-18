@@ -31,9 +31,17 @@ export default function News() {
         canonical={`${BASE_URL}/actualites${page > 1 ? `?page=${page}` : ''}`}
       />
 
-      <section className="page-header">
-        <h1>Actualités</h1>
-        <p>Les dernières nouvelles d'Athermelec</p>
+      <section className="page-header page-header-img">
+        <img
+          src="https://images.unsplash.com/photo-1562408590-e32931084e23?w=1600&q=80"
+          alt="Fibre optique et câblage réseau informatique industriel"
+          className="page-header-bg"
+          loading="eager"
+        />
+        <div className="page-header-content">
+          <h1>Actualités</h1>
+          <p>Les dernières nouvelles d'Athermelec</p>
+        </div>
       </section>
 
       <section className="section">
@@ -53,6 +61,7 @@ export default function News() {
                     })}
                   </time>
                 )}
+                <span className="card-read-more">Lire l'article →</span>
               </div>
             </Link>
           ))}

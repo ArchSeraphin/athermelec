@@ -31,8 +31,8 @@ export default function Home() {
       <section className="hero">
         <div className="hero-bg">
           <img
-            src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=1600&q=80"
-            alt="Technicien Athermelec intervenant sur armoire électrique industrielle"
+            src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=1600&q=80"
+            alt="Robot industriel et automation dans une usine moderne"
             className="hero-bg-img"
             loading="eager"
           />
@@ -163,8 +163,8 @@ export default function Home() {
               </div>
               <div className="two-col-img">
                 <img
-                  src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=900&q=80"
-                  alt="L'équipe Athermelec au travail"
+                  src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=900&q=80"
+                  alt="Salle serveurs et infrastructure réseau industrielle"
                   loading="lazy"
                 />
               </div>
@@ -232,6 +232,7 @@ export default function Home() {
                           })}
                         </span>
                       )}
+                      <span className="card-read-more">Lire l'article →</span>
                     </div>
                   </Link>
                 ))}

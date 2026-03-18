@@ -98,9 +98,17 @@ export default function Realisations() {
         canonical={`${BASE_URL}/realisations`}
       />
 
-      <section className="page-header">
-        <h1>Nos réalisations</h1>
-        <p>Exemples de projets réalisés en électricité industrielle, automatisme et réseaux</p>
+      <section className="page-header page-header-img">
+        <img
+          src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1600&q=80"
+          alt="Technicienne sur poste informatique industriel SCADA"
+          className="page-header-bg"
+          loading="eager"
+        />
+        <div className="page-header-content">
+          <h1>Nos réalisations</h1>
+          <p>Exemples de projets réalisés en électricité industrielle, automatisme et réseaux</p>
+        </div>
       </section>
 
       <div className="section-full section-white">

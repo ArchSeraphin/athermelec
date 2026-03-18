@@ -20,8 +20,8 @@ export default function About() {
 
       <section className="page-header page-header-img">
         <img
-          src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=1600&q=80"
-          alt="Site industriel Athermelec"
+          src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1600&q=80"
+          alt="Composants électroniques et carte PCB industrielle"
           className="page-header-bg"
           loading="eager"
         />
