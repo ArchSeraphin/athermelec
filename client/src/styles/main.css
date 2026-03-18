@@ -2165,6 +2165,7 @@ select.form-input {
     position: fixed;
     top: var(--nav-h);
     left: 0; right: 0; bottom: 0;
+    z-index: 300;
     background: rgba(25,25,30,0.98);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
@@ -2175,17 +2176,11 @@ select.form-input {
     overflow-y: auto;
     overscroll-behavior: contain;
     transform: translateX(100%);
-    /* visibility: hidden décalé = le menu ne peut plus recevoir d'événements une fois caché */
-    visibility: hidden;
-    pointer-events: none;
-    transition: transform 0.4s var(--ease), visibility 0s 0.4s;
+    transition: transform 0.4s var(--ease);
   }
 
   .navbar-menu.open {
     transform: translateX(0);
-    visibility: visible;
-    pointer-events: auto;
-    transition: transform 0.4s var(--ease), visibility 0s 0s;
   }
 
   .navbar-links {

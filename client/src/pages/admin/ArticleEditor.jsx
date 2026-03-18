@@ -17,6 +17,8 @@ export default function ArticleEditor() {
   });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  const [uploading, setUploading] = useState(false);
+  const [uploadError, setUploadError] = useState('');
 
   useEffect(() => {
     if (!isEdit) return;
@@ -46,13 +48,20 @@ export default function ArticleEditor() {
   async function handleImageUpload(e) {
     const file = e.target.files[0];
     if (!file) return;
+    setUploading(true);
+    setUploadError('');
     const formData = new FormData();
     formData.append('image', file);
     try {
       const res = await authFetch('/api/admin/media/upload', { method: 'POST', body: formData });
       const data = await res.json();
+      if (!res.ok) throw new Error(data.error || `Erreur serveur (${res.status})`);
       if (data.url) setForm(f => ({ ...f, cover_image: data.url }));
-    } catch (err) {}
+    } catch (err) {
+      setUploadError(err.message || 'Erreur lors de l\'upload');
+    } finally {
+      setUploading(false);
+    }
   }
 
   async function handleSubmit(e) {
@@ -120,7 +129,9 @@ export default function ArticleEditor() {
 
         <div className="form-group">
           <label>Image de couverture</label>
-          <input type="file" accept="image/*" onChange={handleImageUpload} />
+          <input type="file" accept="image/*" onChange={handleImageUpload} disabled={uploading} />
+          {uploading && <p style={{ color: 'var(--text-2)', marginTop: '0.5rem' }}>Upload en cours…</p>}
+          {uploadError && <div className="alert alert-error" style={{ marginTop: '0.5rem' }}>{uploadError}</div>}
           {form.cover_image && (
             <div className="image-preview">
               <img src={form.cover_image} alt="Couverture" />
