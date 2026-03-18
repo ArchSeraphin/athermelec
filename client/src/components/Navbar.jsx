@@ -55,6 +55,7 @@ export default function Navbar() {
             <li><NavLink to="/a-propos" onClick={close}>À propos</NavLink></li>
             <li><NavLink to="/services" onClick={close}>Services</NavLink></li>
             <li><NavLink to="/realisations" onClick={close}>Réalisations</NavLink></li>
+            <li><NavLink to="/actualites" onClick={close}>Actualités</NavLink></li>
             <li><NavLink to="/contact" onClick={close}>Contact</NavLink></li>
           </ul>
           <div className="navbar-cta">

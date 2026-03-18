@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import ScrollReveal from '../components/ScrollReveal';
 import { IconBolt } from '../components/Icons';
@@ -50,11 +51,52 @@ const DEMO_REALISATIONS = [
   },
 ];
 
+function RealisationCard({ r }) {
+  const body = (
+    <>
+      {r.cover_image ? (
+        <img
+          src={r.cover_image}
+          alt={r.title}
+          className="realisation-card-img"
+          loading="lazy"
+        />
+      ) : (
+        <div className="realisation-card-img-placeholder"><IconBolt /></div>
+      )}
+      <div className="realisation-card-body">
+        {r.category && <span className="realisation-category">{r.category}</span>}
+        <h3>{r.title}</h3>
+        {r.description && <p>{r.description}</p>}
+        <div className="realisation-card-meta">
+          {r.date_realisation && (
+            <span className="realisation-date">
+              {new Date(r.date_realisation).toLocaleDateString('fr-FR', {
+                year: 'numeric', month: 'long'
+              })}
+            </span>
+          )}
+          {r.slug && <span className="card-read-more">Voir la réalisation →</span>}
+        </div>
+      </div>
+    </>
+  );
+
+  if (r.slug) {
+    return (
+      <Link to={`/realisations/${r.slug}`} className="realisation-card">
+        {body}
+      </Link>
+    );
+  }
+
+  return <div className="realisation-card">{body}</div>;
+}
+
 export default function Realisations() {
   const [realisations, setRealisations] = useState([]);
   const [activeCategory, setActiveCategory] = useState('');
   const [loading, setLoading] = useState(true);
-  const [lightbox, setLightbox] = useState(null);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -75,14 +117,6 @@ export default function Realisations() {
 
     return () => controller.abort();
   }, [activeCategory]);
-
-  // Fermer lightbox avec Escape
-  useEffect(() => {
-    if (!lightbox) return;
-    const handler = (e) => { if (e.key === 'Escape') setLightbox(null); };
-    document.addEventListener('keydown', handler);
-    return () => document.removeEventListener('keydown', handler);
-  }, [lightbox]);
 
   const displayed = realisations.length > 0 ? realisations : (loading ? [] : DEMO_REALISATIONS);
 
@@ -134,56 +168,11 @@ export default function Realisations() {
 
           <ScrollReveal>
             <div className="realisations-grid">
-              {filtered.map(r => (
-                <div
-                  key={r.id}
-                  className="realisation-card"
-                  onClick={() => r.cover_image && setLightbox(r.cover_image)}
-                  style={{ cursor: r.cover_image ? 'pointer' : 'default' }}
-                >
-                  {r.cover_image ? (
-                    <img
-                      src={r.cover_image}
-                      alt={r.title}
-                      className="realisation-card-img"
-                      loading="lazy"
-                    />
-                  ) : (
-                    <div className="realisation-card-img-placeholder"><IconBolt /></div>
-                  )}
-                  <div className="realisation-card-body">
-                    {r.category && (
-                      <span className="realisation-category">{r.category}</span>
-                    )}
-                    <h3>{r.title}</h3>
-                    {r.description && <p>{r.description}</p>}
-                    {r.date_realisation && (
-                      <span className="card-date">
-                        {new Date(r.date_realisation).toLocaleDateString('fr-FR', {
-                          year: 'numeric', month: 'long'
-                        })}
-                      </span>
-                    )}
-                  </div>
-                </div>
-              ))}
+              {filtered.map(r => <RealisationCard key={r.id} r={r} />)}
             </div>
           </ScrollReveal>
         </section>
       </div>
-
-      {/* Lightbox */}
-      {lightbox && (
-        <div
-          className="lightbox"
-          onClick={() => setLightbox(null)}
-          role="dialog"
-          aria-modal="true"
-          aria-label="Image agrandie"
-        >
-          <img src={lightbox} alt="Réalisation Athermelec" />
-        </div>
-      )}
 
       {/* CTA */}
       <ScrollReveal>
@@ -191,7 +180,7 @@ export default function Realisations() {
           <div className="cta-section-inner">
             <h2>Votre projet, notre prochain défi</h2>
             <p>Chaque installation est unique. Contactez-nous pour étudier votre projet ensemble.</p>
-            <a href="/contact" className="btn btn-primary btn-lg">Discuter de votre projet</a>
+            <Link to="/contact" className="btn btn-primary btn-lg">Discuter de votre projet</Link>
           </div>
         </div>
       </ScrollReveal>

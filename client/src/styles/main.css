@@ -1587,6 +1587,8 @@ select.form-input {
   transition: background 0.25s;
   display: flex;
   flex-direction: column;
+  text-decoration: none;
+  color: inherit;
 }
 
 .realisation-card:hover { background: var(--bg-elevated); }

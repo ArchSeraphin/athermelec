@@ -14,6 +14,7 @@ import Services from './pages/Services';
 import Realisations from './pages/Realisations';
 import News from './pages/News';
 import NewsDetail from './pages/NewsDetail';
+import RealisationDetail from './pages/RealisationDetail';
 import Contact from './pages/Contact';
 import Partners from './pages/Partners';
 import Legal from './pages/Legal';
@@ -189,6 +190,7 @@ export default function App() {
               <Route path="/a-propos" element={<About />} />
               <Route path="/services" element={<Services />} />
               <Route path="/realisations" element={<Realisations />} />
+              <Route path="/realisations/:slug" element={<RealisationDetail />} />
               <Route path="/actualites" element={<News />} />
               <Route path="/actualites/:slug" element={<NewsDetail />} />
               <Route path="/contact" element={<Contact />} />
