@@ -2154,11 +2154,21 @@ select.form-input {
     justify-content: center;
     align-items: center;
     gap: 2.5rem;
+    overflow-y: auto;
+    overscroll-behavior: contain;
     transform: translateX(100%);
-    transition: transform 0.4s var(--ease);
+    /* visibility: hidden décalé = le menu ne peut plus recevoir d'événements une fois caché */
+    visibility: hidden;
+    pointer-events: none;
+    transition: transform 0.4s var(--ease), visibility 0s 0.4s;
   }
 
-  .navbar-menu.open { transform: translateX(0); }
+  .navbar-menu.open {
+    transform: translateX(0);
+    visibility: visible;
+    pointer-events: auto;
+    transition: transform 0.4s var(--ease), visibility 0s 0s;
+  }
 
   .navbar-links {
     flex-direction: column;

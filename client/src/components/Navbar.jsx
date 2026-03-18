@@ -12,7 +12,13 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Fermer le menu si on clique en dehors
+  // Bloquer le scroll du body quand le menu est ouvert
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? 'hidden' : '';
+    return () => { document.body.style.overflow = ''; };
+  }, [menuOpen]);
+
+  // Fermer le menu sur Escape
   useEffect(() => {
     if (!menuOpen) return;
     const handleKey = (e) => { if (e.key === 'Escape') setMenuOpen(false); };
