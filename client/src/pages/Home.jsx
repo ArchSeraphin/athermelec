@@ -163,8 +163,8 @@ export default function Home() {
               </div>
               <div className="two-col-img">
                 <img
-                  src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=900&q=80"
-                  alt="Salle serveurs et infrastructure réseau industrielle"
+                  src="/assets/img/voltage-haute-tension.webp"
+                  alt="Travaux haute tension en usine industrielle"
                   loading="lazy"
                 />
               </div>
