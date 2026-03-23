@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { Link, NavLink } from 'react-router-dom';
 import ThemeToggle from './ThemeToggle';
 
@@ -29,29 +30,59 @@ export default function Navbar() {
   const close = () => setMenuOpen(false);
 
   return (
-    <nav className={`navbar${scrolled ? ' scrolled' : ''}`} aria-label="Navigation principale">
-      <div className="navbar-container">
-        <Link to="/" className="navbar-logo" onClick={close} aria-label="Athermelec — Accueil">
-          <img src="/assets/img/logo-athermelec.png" alt="Logo Athermelec" className="navbar-logo-img logo-default" />
-          <img src="/assets/img/logo-athermelec-white.webp" alt="Logo Athermelec" className="navbar-logo-img logo-white" />
-          <span className="navbar-logo-text">Athermelec</span>
-        </Link>
+    <>
+      <nav className={`navbar${scrolled ? ' scrolled' : ''}`} aria-label="Navigation principale">
+        <div className="navbar-container">
+          <Link to="/" className="navbar-logo" onClick={close} aria-label="Athermelec — Accueil">
+            <img src="/assets/img/logo-athermelec.png" alt="Logo Athermelec" className="navbar-logo-img logo-default" />
+            <img src="/assets/img/logo-athermelec-white.webp" alt="Logo Athermelec" className="navbar-logo-img logo-white" />
+            <span className="navbar-logo-text">Athermelec</span>
+          </Link>
 
-        <button
-          className="navbar-toggle"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label={menuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
-          aria-expanded={menuOpen}
+          {/* Menu desktop — visible uniquement sur desktop */}
+          <div className="navbar-menu">
+            <ul className="navbar-links">
+              <li><NavLink to="/" end onClick={close}>Accueil</NavLink></li>
+              <li><NavLink to="/a-propos" onClick={close}>À propos</NavLink></li>
+              <li><NavLink to="/services" onClick={close}>Services</NavLink></li>
+              <li><NavLink to="/realisations" onClick={close}>Réalisations</NavLink></li>
+              <li><NavLink to="/actualites" onClick={close}>Actualités</NavLink></li>
+              <li><NavLink to="/contact" onClick={close}>Contact</NavLink></li>
+            </ul>
+            <div className="navbar-cta">
+              <ThemeToggle />
+              <Link to="/contact" className="btn btn-primary" onClick={close}>
+                Demander un devis
+              </Link>
+            </div>
+          </div>
+
+          <button
+            className="navbar-toggle"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label={menuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
+            aria-expanded={menuOpen}
+          >
+            <span className={`hamburger${menuOpen ? ' open' : ''}`}>
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+          </button>
+        </div>
+      </nav>
+
+      {/* Menu mobile via Portal — rendu sur document.body, hors du
+          contexte d'empilement de la navbar (évite le bug position:fixed
+          dans position:fixed sur mobile) */}
+      {createPortal(
+        <div
+          className={`navbar-mobile-overlay${menuOpen ? ' open' : ''}`}
+          aria-hidden={!menuOpen}
+          role="dialog"
+          aria-label="Menu navigation mobile"
         >
-          <span className={`hamburger${menuOpen ? ' open' : ''}`}>
-            <span></span>
-            <span></span>
-            <span></span>
-          </span>
-        </button>
-
-        <div className={`navbar-menu${menuOpen ? ' open' : ''}`}>
-          <ul className="navbar-links">
+          <ul className="navbar-mobile-links">
             <li><NavLink to="/" end onClick={close}>Accueil</NavLink></li>
             <li><NavLink to="/a-propos" onClick={close}>À propos</NavLink></li>
             <li><NavLink to="/services" onClick={close}>Services</NavLink></li>
@@ -65,8 +96,9 @@ export default function Navbar() {
               Demander un devis
             </Link>
           </div>
-        </div>
-      </div>
-    </nav>
+        </div>,
+        document.body
+      )}
+    </>
   );
 }

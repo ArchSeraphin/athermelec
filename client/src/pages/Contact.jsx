@@ -49,8 +49,8 @@ export default function Contact() {
 
       <section className="page-header page-header-img">
         <img
-          src="https://images.unsplash.com/photo-1548690312-e3b507d8c110?w=1600&q=80"
-          alt="Armoire électrique industrielle et câblage"
+          src="/assets/img/metal-mesh-cases-of-power-supply-and-wires-2026-03-18-04-43-43-utc.jpg"
+          alt="Armoires de distribution électrique industrielle"
           className="page-header-bg"
           loading="eager"
         />

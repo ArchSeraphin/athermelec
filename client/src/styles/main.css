@@ -775,14 +775,7 @@ select.form-input {
   position: relative;
 }
 
-.stats-bar::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--amber), transparent);
-  opacity: 0.6;
-}
+
 
 .stats-bar-inner {
   max-width: var(--container);
@@ -2158,53 +2151,63 @@ select.form-input {
 @media (max-width: 768px) {
   .navbar-toggle { display: flex; }
 
-  /* Supprimer backdrop-filter sur mobile : il crée un stacking context
-     qui empêche le menu enfant position:fixed de se positionner
-     par rapport au viewport quand l'utilisateur a scrollé */
-  .navbar.scrolled {
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
-    background: rgba(25,25,30,0.98);
-  }
+  /* Menu desktop masqué sur mobile */
+  .navbar-menu { display: none; }
 
-  .navbar-menu {
+  /* ── Menu mobile via Portal (rendu sur document.body) ─────────────
+     Hors du stacking context de la navbar — évite le bug
+     position:fixed à l'intérieur d'un parent position:fixed        */
+  .navbar-mobile-overlay {
     position: fixed;
     top: var(--nav-h);
     left: 0; right: 0; bottom: 0;
-    z-index: 300;
+    z-index: 500;
     background: rgba(25,25,30,0.98);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 2.5rem;
     overflow-y: auto;
     overscroll-behavior: contain;
+    /* Caché hors écran par défaut */
     transform: translateX(100%);
-    transition: transform 0.4s var(--ease);
+    transition: transform 0.4s var(--ease), visibility 0s linear 0.4s;
+    visibility: hidden;
+    pointer-events: none;
   }
 
-  .navbar-menu.open {
+  .navbar-mobile-overlay.open {
     transform: translateX(0);
+    transition: transform 0.4s var(--ease), visibility 0s linear 0s;
+    visibility: visible;
+    pointer-events: all;
   }
 
-  .navbar-links {
+  /* Liens du menu mobile */
+  .navbar-mobile-links {
+    list-style: none;
+    display: flex;
     flex-direction: column;
     align-items: center;
     gap: 0.5rem;
   }
 
-  .navbar-links a {
+  .navbar-mobile-links a {
     font-family: var(--font-head);
     font-size: 2rem;
     font-weight: 700;
     letter-spacing: 0.08em;
     color: var(--text-2);
+    text-transform: uppercase;
+    transition: color 0.2s;
+    text-decoration: none;
   }
 
-  .navbar-links a:hover { color: var(--amber); }
-  .navbar-links a::after { display: none; }
+  .navbar-mobile-links a:hover,
+  .navbar-mobile-links a.active { color: var(--amber); }
 
   .hero-title { font-size: clamp(2.5rem, 9vw, 4rem); }
 
@@ -2395,9 +2398,9 @@ html {
 
 /* ── Menu mobile : fond clair en mode clair ─────────────────────── */
 @media (max-width: 768px) {
-  [data-theme="light"] .navbar-menu {
+  [data-theme="light"] .navbar-mobile-overlay {
     background: rgba(250,250,248,0.98);
   }
-  [data-theme="light"] .navbar-menu .navbar-links a { color: var(--text-2); }
-  [data-theme="light"] .navbar-menu .navbar-links a:hover { color: var(--amber); }
+  [data-theme="light"] .navbar-mobile-links a { color: var(--text-2); }
+  [data-theme="light"] .navbar-mobile-links a:hover { color: var(--amber); }
 }
