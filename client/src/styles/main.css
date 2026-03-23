@@ -178,6 +178,12 @@ main { flex: 1; padding-top: var(--nav-h); }
   object-fit: contain;
 }
 
+/* Logo clair/sombre */
+.logo-white { display: none; }
+.logo-default { display: block; }
+[data-theme="dark"] .logo-white { display: block; }
+[data-theme="dark"] .logo-default { display: none; }
+
 .navbar-logo-text {
   font-family: var(--font-head);
   font-weight: 800;

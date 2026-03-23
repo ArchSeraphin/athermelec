@@ -10,7 +10,8 @@ export default function Footer() {
         {/* Colonne marque */}
         <div className="footer-brand">
           <Link to="/" className="footer-logo" aria-label="Athermelec">
-            <img src="/assets/img/logo-athermelec.png" alt="Logo Athermelec" className="navbar-logo-img" />
+            <img src="/assets/img/logo-athermelec.png" alt="Logo Athermelec" className="navbar-logo-img logo-default" />
+            <img src="/assets/img/logo-athermelec-white.webp" alt="Logo Athermelec" className="navbar-logo-img logo-white" />
             <span className="footer-logo-text">Athermelec</span>
           </Link>
           <p>
