@@ -334,6 +334,14 @@ main { flex: 1; padding-top: var(--nav-h); }
   background: var(--amber-glow);
 }
 
+.footer-col-nav {
+  text-align: center;
+}
+
+.footer-col-nav ul {
+  list-style: none;
+}
+
 .footer-col h4 {
   font-family: var(--font-head);
   font-weight: 700;

@@ -28,7 +28,7 @@ export default function Footer() {
         </div>
 
         {/* Navigation */}
-        <div className="footer-col">
+        <div className="footer-col footer-col-nav">
           <h4>Navigation</h4>
           <ul>
             <li><Link to="/">Accueil</Link></li>
@@ -66,25 +66,15 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="footer-bottom footer-bottom-centered">
-        <nav className="footer-bottom-links footer-bottom-nav-main" aria-label="Navigation principale">
-          <Link to="/">Accueil</Link>
-          <Link to="/a-propos">À propos</Link>
-          <Link to="/services">Services</Link>
-          <Link to="/realisations">Réalisations</Link>
-          <Link to="/actualites">Actualités</Link>
+      <div className="footer-bottom">
+        <p className="footer-copy">
+          &copy; {year} ATHERMELEC SAS. Tous droits réservés.
+        </p>
+        <nav className="footer-bottom-links" aria-label="Liens légaux">
+          <Link to="/mentions-legales">Mentions légales</Link>
+          <Link to="/cgv">CGV</Link>
           <Link to="/contact">Contact</Link>
         </nav>
-        <div className="footer-bottom-secondary">
-          <p className="footer-copy">
-            &copy; {year} ATHERMELEC SAS. Tous droits réservés.
-          </p>
-          <nav className="footer-bottom-links" aria-label="Liens légaux">
-            <Link to="/mentions-legales">Mentions légales</Link>
-            <Link to="/cgv">CGV</Link>
-            <Link to="/contact">Contact</Link>
-          </nav>
-        </div>
       </div>
     </footer>
   );
