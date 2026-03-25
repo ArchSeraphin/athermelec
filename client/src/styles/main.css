@@ -335,11 +335,9 @@ main { flex: 1; padding-top: var(--nav-h); }
 }
 
 .footer-col-nav {
-  text-align: center;
-}
-
-.footer-col-nav ul {
-  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .footer-col h4 {
