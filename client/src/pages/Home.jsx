@@ -31,8 +31,8 @@ export default function Home() {
       <section className="hero">
         <div className="hero-bg">
           <img
-            src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=1600&q=80"
-            alt="Robot industriel et automation dans une usine moderne"
+            src="/assets/img/voltage-switchboard-with-circuit-breakers-electri-2026-01-11-09-28-31-utc.jpg"
+            alt="Tableau électrique industriel haute tension"
             className="hero-bg-img"
             loading="eager"
           />
@@ -43,6 +43,7 @@ export default function Home() {
             L'expertise électrique<br />
             au service de <em>l'industrie</em>
           </h1>
+          <p className="hero-tagline">L'exigence sous tension</p>
           <p className="hero-subtitle">
             ATHERMELEC conçoit et installe vos équipements électriques industriels —
             haute tension, automatisme, réseaux VDI — depuis 1983, en Isère et Haute-Garonne.
@@ -113,11 +114,11 @@ export default function Home() {
               <div className="service-card">
                 <div className="service-icon"><IconNetwork /></div>
                 <h3>Réseaux informatiques & VDI</h3>
-                <p>Précâblage VDI, fibre optique, baies informatiques et paramétrage de switches pour vos environnements industriels.</p>
+                <p>Précâblage VDI, fibre optique et baies informatiques pour vos environnements industriels.</p>
                 <ul>
                   <li>Architecture réseau industriel</li>
                   <li>Fibre optique & lovage</li>
-                  <li>Paramétrage switches & télécoms</li>
+                  <li>Points d'accès WiFi industriels</li>
                 </ul>
               </div>
               <div className="service-card">

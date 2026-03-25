@@ -5,6 +5,7 @@ import ScrollReveal from '../components/ScrollReveal';
 import {
   IconFactory, IconGlobe,
   IconFlask, IconFlame, IconCross, IconDiamond, IconWind, IconBuilding,
+  IconShield, IconWheat,
 } from '../components/Icons';
 
 const BASE_URL = 'https://www.atherm-elec.com';
@@ -102,15 +103,14 @@ export default function About() {
               <div className="service-card">
                 <div className="service-icon"><IconGlobe /></div>
                 <h3>Pechbonnieu (31) — ACTIF RÉSEAU</h3>
-                <p>ZA le Grands – 17 rue des artisans, 31140 PECHBONNIEU</p>
+                <p>ZA le Grands – 17 rue des artisans, 31790 SAINT-JORY</p>
                 <ul>
                   <li>Câblage informatique VDI</li>
                   <li>Fibre optique & lovage</li>
-                  <li>Paramétrage switches & télécoms</li>
                   <li>Milieu industriel & public</li>
                 </ul>
                 <p style={{ marginTop: '1rem', fontSize: '0.875rem', color: 'var(--color-gray-600)' }}>
-                  <strong>Tél :</strong> <a href="tel:+33561711532">05 61 71 15 32</a>
+                  <a href="mailto:actifreseau@orange.fr">actifreseau@orange.fr</a>
                   &ensp;|&ensp;<strong>Secteur :</strong> Industrie + public
                 </p>
               </div>
@@ -161,6 +161,16 @@ export default function About() {
                 <div className="feature-icon"><IconBuilding /></div>
                 <h3>Tertiaire & public</h3>
                 <p>Réseaux VDI et câblage pour les bâtiments tertiaires et publics.</p>
+              </div>
+              <div className="feature-item">
+                <div className="feature-icon"><IconShield /></div>
+                <h3>Défense</h3>
+                <p>Installations électriques et automatismes pour les sites et équipements de défense.</p>
+              </div>
+              <div className="feature-item">
+                <div className="feature-icon"><IconWheat /></div>
+                <h3>Agroalimentaire</h3>
+                <p>Électricité industrielle et automatisme pour les lignes de production agroalimentaires.</p>
               </div>
             </div>
           </section>

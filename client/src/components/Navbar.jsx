@@ -78,7 +78,7 @@ export default function Navbar() {
       {createPortal(
         <div
           className={`navbar-mobile-overlay${menuOpen ? ' open' : ''}`}
-          aria-hidden={!menuOpen}
+          inert={!menuOpen ? '' : undefined}
           role="dialog"
           aria-label="Menu navigation mobile"
         >

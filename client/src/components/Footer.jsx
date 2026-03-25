@@ -14,6 +14,7 @@ export default function Footer() {
             <img src="/assets/img/logo-athermelec-white.webp" alt="Logo Athermelec" className="navbar-logo-img logo-white" />
             <span className="footer-logo-text">Athermelec</span>
           </Link>
+          <p className="footer-slogan">L'exigence sous tension</p>
           <p>
             Expert en électricité industrielle haute et basse tension, automatisme
             et réseaux informatiques depuis 1983. Certifié MASE.
@@ -48,7 +49,6 @@ export default function Footer() {
             38290 FRONTONAS<br /><br />
             <strong>Tél :</strong>{' '}
             <a href="tel:+33474941989">04 74 94 19 89</a><br />
-            <strong>Fax :</strong> 04 74 99 04 95<br />
             <a href="mailto:contact@atherm-elec.com">contact@atherm-elec.com</a>
           </address>
         </div>
@@ -60,22 +60,31 @@ export default function Footer() {
             <strong>ACTIF RÉSEAU</strong><br />
             ZA le Grands<br />
             17 rue des artisans<br />
-            31140 PECHBONNIEU<br /><br />
-            <strong>Tél :</strong>{' '}
-            <a href="tel:+33561711532">05 61 71 15 32</a><br />
-            <strong>Fax :</strong> 05 34 36 94 76
+            31790 SAINT-JORY<br /><br />
+            <a href="mailto:actifreseau@orange.fr">actifreseau@orange.fr</a>
           </address>
         </div>
       </div>
 
-      <div className="footer-bottom">
-        <p className="footer-copy">
-          &copy; {year} ATHERMELEC SAS. Tous droits réservés.
-        </p>
-        <nav className="footer-bottom-links" aria-label="Liens légaux">
-          <Link to="/mentions-legales">Mentions légales</Link>
+      <div className="footer-bottom footer-bottom-centered">
+        <nav className="footer-bottom-links footer-bottom-nav-main" aria-label="Navigation principale">
+          <Link to="/">Accueil</Link>
+          <Link to="/a-propos">À propos</Link>
+          <Link to="/services">Services</Link>
+          <Link to="/realisations">Réalisations</Link>
+          <Link to="/actualites">Actualités</Link>
           <Link to="/contact">Contact</Link>
         </nav>
+        <div className="footer-bottom-secondary">
+          <p className="footer-copy">
+            &copy; {year} ATHERMELEC SAS. Tous droits réservés.
+          </p>
+          <nav className="footer-bottom-links" aria-label="Liens légaux">
+            <Link to="/mentions-legales">Mentions légales</Link>
+            <Link to="/cgv">CGV</Link>
+            <Link to="/contact">Contact</Link>
+          </nav>
+        </div>
       </div>
     </footer>
   );

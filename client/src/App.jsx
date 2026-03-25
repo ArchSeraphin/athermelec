@@ -18,6 +18,7 @@ import RealisationDetail from './pages/RealisationDetail';
 import Contact from './pages/Contact';
 import Partners from './pages/Partners';
 import Legal from './pages/Legal';
+import CGV from './pages/CGV';
 import NotFound from './pages/NotFound';
 
 // Pages admin
@@ -196,6 +197,7 @@ export default function App() {
               <Route path="/contact" element={<Contact />} />
               <Route path="/partenaires" element={<Partners />} />
               <Route path="/mentions-legales" element={<Legal />} />
+              <Route path="/cgv" element={<CGV />} />
 
               {/* Routes admin */}
               <Route path="/admin/login" element={<Login />} />

@@ -32,6 +32,7 @@ const services = [
       'Conception et réalisation d\'armoires électriques',
       'Retrofitting d\'armoires existantes',
       'Éclairage industriel & relamping',
+      'Remise en conformité',
     ]
   },
   {
@@ -56,7 +57,6 @@ const services = [
       'Précâblage VDI (courant faible)',
       'Installation de baies informatiques',
       'Fibre optique (lovage, installation)',
-      'Paramétrage switches & télécommunication',
       'Pose de points d\'accès WiFi',
     ]
   },
@@ -80,17 +80,19 @@ const services = [
     items: [
       'Certification IRVE niveaux 1 et 2',
       'Étude et dimensionnement',
+      'Installation clé en main avec VRD',
       'Installation de bornes de recharge',
       'Mise en service et documentation',
+      'Maintenance',
     ]
   },
   {
     icon: <IconSnowflake />,
-    title: 'Climatisation industrielle',
+    title: 'Climatisation',
     description: 'Étude et installation de systèmes climatiques pour vos locaux industriels.',
     items: [
       'Étude des besoins thermiques',
-      'Installation de systèmes CVC',
+      'Installation de PAC',
       'Maintenance et mise en service',
     ]
   },

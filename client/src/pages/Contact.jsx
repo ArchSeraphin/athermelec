@@ -134,7 +134,6 @@ export default function Contact() {
                     328 route de la Verpillière<br />
                     38290 FRONTONAS<br /><br />
                     <strong>Tél :</strong> <a href="tel:+33474941989">04 74 94 19 89</a><br />
-                    <strong>Fax :</strong> 04 74 99 04 95<br />
                     <a href="mailto:contact@atherm-elec.com">contact@atherm-elec.com</a>
                   </address>
                   <div className="contact-map">
@@ -155,9 +154,8 @@ export default function Contact() {
                   <address>
                     <strong>ACTIF RÉSEAU</strong><br />
                     ZA le Grands – 17 rue des artisans<br />
-                    31140 PECHBONNIEU<br /><br />
-                    <strong>Tél :</strong> <a href="tel:+33561711532">05 61 71 15 32</a><br />
-                    <strong>Fax :</strong> 05 34 36 94 76
+                    31790 SAINT-JORY<br /><br />
+                    <a href="mailto:actifreseau@orange.fr">actifreseau@orange.fr</a>
                   </address>
                   <div className="contact-map">
                     <iframe
