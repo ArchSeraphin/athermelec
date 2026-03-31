@@ -96,22 +96,24 @@ export default function About() {
                   <li>Bureau d'études clé en main</li>
                 </ul>
                 <p style={{ marginTop: '1rem', fontSize: '0.875rem', color: 'var(--color-gray-600)' }}>
-                  <strong>Tél :</strong> <a href="tel:+33474941989">04 74 94 19 89</a>
-                  &ensp;|&ensp;<strong>Secteur :</strong> Industrie
+                  <strong>Tél :</strong> <a href="tel:+33474941989">04 74 94 19 89</a><br />
+                  <a href="mailto:contact@atherm-elec.com">contact@atherm-elec.com</a><br />
+                  <strong>Secteur :</strong> Industrie
                 </p>
               </div>
               <div className="service-card">
                 <div className="service-icon"><IconGlobe /></div>
-                <h3>Pechbonnieu (31) — ACTIF RÉSEAU</h3>
-                <p>ZA le Grands – 17 rue des artisans, 31790 SAINT-JORY</p>
+                <h3>Saint-Jory (31) — ACTIF RÉSEAU</h3>
+                <p>9 impasse de los Appares, 31790 SAINT-JORY</p>
                 <ul>
                   <li>Câblage informatique VDI</li>
                   <li>Fibre optique & lovage</li>
                   <li>Milieu industriel & public</li>
                 </ul>
                 <p style={{ marginTop: '1rem', fontSize: '0.875rem', color: 'var(--color-gray-600)' }}>
-                  <a href="mailto:actifreseau@orange.fr">actifreseau@orange.fr</a>
-                  &ensp;|&ensp;<strong>Secteur :</strong> Industrie + public
+                  <strong>Tél :</strong> <a href="tel:+33750125154">07 50 12 51 54</a><br />
+                  <a href="mailto:actifreseau@orange.fr">actifreseau@orange.fr</a><br />
+                  <strong>Secteur :</strong> Industrie + public
                 </p>
               </div>
             </div>

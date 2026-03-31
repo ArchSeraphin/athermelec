@@ -53,14 +53,15 @@ export default function Footer() {
           </address>
         </div>
 
-        {/* Site Pechbonnieu */}
+        {/* Site Saint-Jory */}
         <div className="footer-col">
-          <h4>Pechbonnieu (31)</h4>
+          <h4>Saint-Jory (31)</h4>
           <address className="footer-address">
             <strong>ACTIF RÉSEAU</strong><br />
-            ZA le Grands<br />
-            17 rue des artisans<br />
+            9 impasse de los Appares<br />
             31790 SAINT-JORY<br /><br />
+            <strong>Tél :</strong>{' '}
+            <a href="tel:+33750125154">07 50 12 51 54</a><br />
             <a href="mailto:actifreseau@orange.fr">actifreseau@orange.fr</a>
           </address>
         </div>

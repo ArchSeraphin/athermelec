@@ -43,7 +43,7 @@ export default function Contact() {
     <>
       <SEO
         title="Contact — Frontonas (38) & Pechbonnieu (31)"
-        description="Contactez ATHERMELEC pour vos projets en électricité industrielle, automatisme et réseaux. Siège à Frontonas (38) — 04 74 94 19 89. Site de Pechbonnieu (31) — 05 61 71 15 32."
+        description="Contactez ATHERMELEC pour vos projets en électricité industrielle, automatisme et réseaux. Siège à Frontonas (38) — 04 74 94 19 89. Site ACTIF RÉSEAU Saint-Jory (31) — 07 50 12 51 54."
         canonical={`${BASE_URL}/contact`}
       />
 
@@ -56,7 +56,7 @@ export default function Contact() {
         />
         <div className="page-header-content">
           <h1>Contactez-nous</h1>
-          <p>Deux sites à votre service — Frontonas (38) et Pechbonnieu (31)</p>
+          <p>Deux sites à votre service — Frontonas (38) et Saint-Jory (31)</p>
         </div>
       </section>
 
@@ -148,13 +148,14 @@ export default function Contact() {
 
                 <div className="contact-site">
                   <h3>
-                    Pechbonnieu (31)
+                    Saint-Jory (31)
                     <span className="contact-site-tag">ACTIF RÉSEAU</span>
                   </h3>
                   <address>
                     <strong>ACTIF RÉSEAU</strong><br />
-                    ZA le Grands – 17 rue des artisans<br />
+                    9 impasse de los Appares<br />
                     31790 SAINT-JORY<br /><br />
+                    <strong>Tél :</strong> <a href="tel:+33750125154">07 50 12 51 54</a><br />
                     <a href="mailto:actifreseau@orange.fr">actifreseau@orange.fr</a>
                   </address>
                   <div className="contact-map">

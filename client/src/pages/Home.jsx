@@ -31,7 +31,7 @@ export default function Home() {
       <section className="hero">
         <div className="hero-bg">
           <img
-            src="/assets/img/voltage-switchboard-with-circuit-breakers-electri-2026-01-11-09-28-31-utc.jpg"
+            src="/assets/img/atherm-hero-home.jpeg"
             alt="Tableau électrique industriel haute tension"
             className="hero-bg-img"
             loading="eager"

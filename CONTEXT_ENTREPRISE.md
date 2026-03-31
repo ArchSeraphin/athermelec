@@ -28,15 +28,15 @@
 ### Siège social — FRONTONAS (38)
 - **Adresse :** 328 route de la Verpillière, 38290 FRONTONAS
 - **Téléphone :** 04 74 94 19 89 / +33 (0)4 74 94 19 89
-- **Fax :** 04 74 99 04 95
+- **Email :** contact@atherm-elec.com
 - **Site web :** www.atherm-elec.com
 - **Domaine d'activité :** Électricité & informatique industrielle
 
-### Site secondaire — PECHBONNIEU (31)
+### Site secondaire — SAINT-JORY (31)
 - **Entité :** ACTIF RESEAU
-- **Adresse :** ZA le Grands – 17 rue des artisans, 31140 PECHBONNIEU
-- **Téléphone :** 05 61 71 15 32
-- **Fax :** 05 34 36 94 76
+- **Adresse :** 9 impasse de los Appares, 31790 SAINT-JORY
+- **Téléphone :** 07 50 12 51 54
+- **Email :** actifreseau@orange.fr
 - **Domaine d'activité :** Informatique industrielle (VDI, fibre optique, switch)
 
 ---
