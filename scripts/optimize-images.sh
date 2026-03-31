@@ -10,7 +10,11 @@ SRC_DIR="$(dirname "$0")/../client/src"
 QUALITY=82
 MAX_WIDTH=1920
 
-if ! command -v cwebp &>/dev/null; then
+# Résolution de cwebp (Homebrew ne met pas toujours /opt/homebrew/bin dans le PATH de npm)
+CWEBP=$(command -v cwebp 2>/dev/null \
+  || ls /opt/homebrew/bin/cwebp /usr/local/bin/cwebp 2>/dev/null | head -1)
+
+if [ -z "$CWEBP" ]; then
   echo "❌ cwebp introuvable. Installez-le : brew install webp"
   exit 1
 fi
@@ -34,11 +38,11 @@ for file in "$IMG_DIR"/*.jpg "$IMG_DIR"/*.jpeg "$IMG_DIR"/*.png; do
 
   if [ "$ext" = "png" ]; then
     # PNG → WebP lossless (logos, transparences)
-    cwebp -lossless "$file" -o "$out" -quiet
+    "$CWEBP" -lossless "$file" -o "$out" -quiet
     echo "✅ [lossless] $filename → $base.webp ($(du -h "$out" | cut -f1))"
   else
     # JPG/JPEG → WebP qualité 82, max 1920px de large
-    cwebp -q "$QUALITY" -resize "$MAX_WIDTH" 0 "$file" -o "$out" -quiet
+    "$CWEBP" -q "$QUALITY" -resize "$MAX_WIDTH" 0 "$file" -o "$out" -quiet
     echo "✅ [lossy]    $filename → $base.webp ($(du -h "$out" | cut -f1))"
   fi
 
