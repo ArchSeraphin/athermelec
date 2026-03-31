@@ -31,7 +31,7 @@ export default function Home() {
       <section className="hero">
         <div className="hero-bg">
           <img
-            src="/assets/img/atherm-hero-home.jpeg"
+            src="/assets/img/atherm-hero-home.webp"
             alt="Tableau électrique industriel haute tension"
             className="hero-bg-img"
             loading="eager"
