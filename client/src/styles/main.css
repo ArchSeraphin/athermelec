@@ -2211,6 +2211,8 @@ select.form-input {
 
 /* Mobile: ≤ 768px */
 @media (max-width: 768px) {
+  .hero-bg-img { object-position: right center; }
+
   .navbar-toggle { display: flex; }
 
   /* Menu desktop masqué sur mobile */

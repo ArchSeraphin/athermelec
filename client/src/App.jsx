@@ -45,7 +45,12 @@ function AuthProvider({ children }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    refreshToken().finally(() => setLoading(false));
+    // Tenter le refresh uniquement sur les pages admin pour éviter le 401 en console sur les pages publiques
+    if (window.location.pathname.startsWith('/admin')) {
+      refreshToken().finally(() => setLoading(false));
+    } else {
+      setLoading(false);
+    }
   }, []);
 
   async function login(email, password) {
