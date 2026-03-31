@@ -55,11 +55,7 @@ export default function Dashboard() {
           <span className="admin-section-icon">🏗️</span>
           Réalisations
         </Link>
-        <Link to="/admin/partenaires" className="admin-section-link">
-          <span className="admin-section-icon">🤝</span>
-          Partenaires
-        </Link>
-        <Link to="/admin/settings" className="admin-section-link">
+<Link to="/admin/settings" className="admin-section-link">
           <span className="admin-section-icon">⚙️</span>
           Paramètres
         </Link>
