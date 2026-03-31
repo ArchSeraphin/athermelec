@@ -148,7 +148,7 @@ const localBusinessSchema = {
   legalName: 'ATHERMELEC SAS',
   description: 'Expert en électricité industrielle haute et basse tension, automatisme et réseaux VDI. Certifié MASE depuis 2008.',
   url: 'https://www.atherm-elec.com',
-  logo: 'https://www.atherm-elec.com/assets/img/logo-athermelec.png',
+  logo: 'https://www.atherm-elec.com/assets/img/logo-athermelec.webp',
   image: 'https://www.atherm-elec.com/img/og-default.jpg',
   telephone: '+33474941989',
   email: 'contact@atherm-elec.com',

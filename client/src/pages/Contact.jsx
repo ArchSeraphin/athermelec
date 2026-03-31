@@ -49,7 +49,7 @@ export default function Contact() {
 
       <section className="page-header page-header-img">
         <img
-          src="/assets/img/metal-mesh-cases-of-power-supply-and-wires-2026-03-18-04-43-43-utc.jpg"
+          src="/assets/img/metal-mesh-cases-of-power-supply-and-wires-2026-03-18-04-43-43-utc.webp"
           alt="Armoires de distribution électrique industrielle"
           className="page-header-bg"
           loading="eager"

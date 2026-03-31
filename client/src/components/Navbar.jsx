@@ -34,7 +34,7 @@ export default function Navbar() {
       <nav className={`navbar${scrolled ? ' scrolled' : ''}`} aria-label="Navigation principale">
         <div className="navbar-container">
           <Link to="/" className="navbar-logo" onClick={close} aria-label="Athermelec — Accueil">
-            <img src="/assets/img/logo-athermelec.png" alt="Logo Athermelec" className="navbar-logo-img logo-default" />
+            <img src="/assets/img/logo-athermelec.webp" alt="Logo Athermelec" className="navbar-logo-img logo-default" />
             <img src="/assets/img/logo-athermelec-white.webp" alt="Logo Athermelec" className="navbar-logo-img logo-white" />
             <span className="navbar-logo-text">Athermelec</span>
           </Link>
